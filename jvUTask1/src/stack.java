@@ -25,7 +25,7 @@ public class stack {
 
     public int peek() {
         if (!isEmpty()) return head.data;
-        else throw new EmptyStackExeption("Стек не содержит элементов.");
+        else throw new EmptyStackException("Стек не содержит элементов.");
     }
 
     public int pop () {
@@ -34,6 +34,7 @@ public class stack {
             head = head.next;
             return t.data;
         }
-        else throw new EmptyStackExeption("Стек не содержит элементов.");
+        else throw new EmptyStackException("Стек не содержит элементов.");
     }
 }
+
