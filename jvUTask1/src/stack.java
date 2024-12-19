@@ -1,15 +1,15 @@
-public class stack {
+public class stack<T> {
 
     private class node {
-        int data;
+        T data;
         node next;
 
-        node(int _data) {
+        node(T _data) {
             this.data = _data;
             this.next = null;
         }
 
-        node(int _data, node _next) {
+        node(T _data, node _next) {
             this.data = _data;
             this.next = _next;
         }
@@ -21,18 +21,18 @@ public class stack {
 
     public boolean isEmpty() { return head == null; }
 
-    public void push (int data) { head = new node(data, head); }
+    public void push (T data) { head = new node(data, head); }
 
-    public int peek() {
+    public T peek() {
         if (!isEmpty()) return head.data;
         else throw new EmptyStackException("Стек не содержит элементов.");
     }
 
-    public int pop () {
+    public T pop () {
         if (head != null) {
-            node t = head;
+            node tmpr = head;
             head = head.next;
-            return t.data;
+            return tmpr.data;
         }
         else throw new EmptyStackException("Стек не содержит элементов.");
     }
