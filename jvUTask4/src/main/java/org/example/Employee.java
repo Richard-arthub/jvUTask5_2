@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.Date;
 
+/**
+ * Классс отражает сущность рабочего, инфомрацию о нём
+ */
 public class Employee {
 
     private int ID;
@@ -11,6 +14,17 @@ public class Employee {
     private int Salary;
     private String BirthdayDate;
 
+    /**
+     * Конструктор с заданием всех параметров сущности рабочего
+     *
+     * @param id идентификационный номер рабочего
+     * @param name имя рабочего
+     * @param gender пол рабочего
+     * @param divId номер подразделения рабочего
+     * @param divName название подразделения рабочего
+     * @param salary зарплата рабочего
+     * @param birthdayDate день рождения рабочего
+     */
     Employee(int id, String name, String gender, int divId, char divName, int salary, String birthdayDate)
     { ID = id; Name = name; Gender = gender; Salary = salary; BirthdayDate = birthdayDate; Division = new Division_t();
         Division.setID(divId); Division.setName(divName);

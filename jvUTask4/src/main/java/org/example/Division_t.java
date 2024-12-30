@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.Random;
 
+/**
+ * Клас отражает сущность подразделения - его код и имя
+ */
 public class Division_t {
     private int ID;
     private char Name;

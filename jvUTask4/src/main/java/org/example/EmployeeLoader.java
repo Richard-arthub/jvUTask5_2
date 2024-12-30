@@ -13,25 +13,22 @@ import java.util.*;
 import static java.io.File.separator;
 import static org.apache.commons.lang3.RandomUtils.nextInt;
 
+/**
+ * Класс для преобразования csv-файла определённого вида с данными о рбочих в список объектов класса Employee
+ */
 public class EmployeeLoader {
 
+    /**
+     * метод преобразует данный csv-файл в список объектов класса Employee
+     *
+     * @param csvFilePath исходный csv-файл с данными о рабочих
+     * @return список объектов класса Employee
+     */
     public List<Employee> getEmployeeList(String csvFilePath)
     {
         List<Employee> EmployeeList = new ArrayList<>();
         int [] hash = new int[27];
         List<Integer> usedDivId = new ArrayList<>();
-
-//        try (InputStream in = getClass().getClassLoader().getResourceAsStream(csvFilePath);
-//             CSVReader reader = in == null ? null : new CSVReader(new InputStreamReader(in), separator)) {
-//            if (reader == null) {
-//                throw new FileNotFoundException(csvFilePath);
-//            }
-//            String[] nextLine;
-//            while ((nextLine = reader.readNext()) != null)
-//            {
-//                //String -> "ID, Name, ..."
-//                EmployeeList.add(new Employee(id, name, gender, divName - 'A', divName, salary, birthdayDate));
-//            }
 
             try
             {
