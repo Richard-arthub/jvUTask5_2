@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Division_t {
     private int ID;
-    char Name;
+    private char Name;
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int id) {
+        ID = id;
     }
 
     public void setName(char name) {

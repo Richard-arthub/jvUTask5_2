@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Date;
+
 public class Employee {
 
     private int ID;
@@ -7,9 +9,14 @@ public class Employee {
     private String Gender; //bool?
     private Division_t Division;
     private int Salary;
-    private int BirthdayDate;
+    private String BirthdayDate;
 
-    public void setBirthdayDate(int birthdayDate) {
+    Employee(int id, String name, String gender, int divId, char divName, int salary, String birthdayDate)
+    { ID = id; Name = name; Gender = gender; Salary = salary; BirthdayDate = birthdayDate; Division = new Division_t();
+        Division.setID(divId); Division.setName(divName);
+    }
+
+    public void setBirthdayDate(String birthdayDate) {
         BirthdayDate = birthdayDate;
     }
 
@@ -32,6 +39,31 @@ public class Employee {
 
     public void setSalary(int salary) {
         Salary = salary;
+    }
+
+
+    public int getID() {
+        return ID;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getBirthdayDate() {
+        return BirthdayDate;
+    }
+
+    public Division_t getDivision() {
+        return Division;
+    }
+
+    public int getSalary() {
+        return Salary;
+    }
+
+    public String getGender() {
+        return Gender;
     }
 }
 
