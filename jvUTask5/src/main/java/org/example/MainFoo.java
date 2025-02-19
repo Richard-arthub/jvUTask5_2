@@ -1,5 +1,8 @@
 package org.example;
 
+/**
+ * Класс с авто инъектируемыми полями.
+ */
 public class MainFoo {
     @AutoInjectable
     private FirstInterface field1;

@@ -5,10 +5,18 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.lang.reflect.Field;
 
+/**
+ * Класс для инъектирования зависимостей в поля, помеченные аннотацией @AutoInjectable.
+ */
 public class Injector {
 
     private final Properties properties = new Properties();
 
+    /**
+     * Применяет конфигурации из properties файла.
+     *
+     * @throws IOException вВ случае, когда файл не найден.
+     */
     public Injector() throws IOException {
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("Injection.properties")) {
             if (input == null) {
@@ -18,6 +26,14 @@ public class Injector {
         }
     }
 
+    /**
+     * Метод инъектирует зависимости в поля объекта.
+     *
+     * @param obj объект, поля которого нужно инициализировать.
+     * @param <T> тип объекта.
+     * @return объект с внедренными зависимостями.
+     * @throws ReflectiveOperationException в случае, когда произошла ошибка рефлексии.
+     */
     public <T> T inject(T obj) throws ReflectiveOperationException {
         Field[] fields = obj.getClass().getDeclaredFields();
 
